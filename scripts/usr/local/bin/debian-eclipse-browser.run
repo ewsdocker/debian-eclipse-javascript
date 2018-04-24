@@ -1,9 +1,11 @@
 #!/bin/bash
-#=========================================================================
+
+# =========================================================================
 # =========================================================================
 #
-#	setup
-#	  Copy run scripts to /userbin.
+#	eclipse-browser-install.run
+#	  Patch script to enable the internal browser for 
+#        ewsdocker/debian-eclipse-javascript
 #
 # =========================================================================
 #
@@ -11,8 +13,8 @@
 # @version 0.0.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
-# @package ewsdocker/debian-eclipse-php
-# @subpackage setup
+# @package ewsdocker/debian-eclipse-javascript
+# @subpackage debian-eclipse-js.run
 #
 # =========================================================================
 #
@@ -27,14 +29,6 @@
 # =========================================================================
 # =========================================================================
 
-echo "Installing libwebkit"
-echo ""
-
 apt-get -y update
 apt-get -y install libwebkitgtk-1.0-0 
 
-echo ""
-echo -n "Copying files to /userbin... "
-cp /usr/local/bin/*.run /userbin
-echo "done."
-echo ""
