@@ -27,12 +27,6 @@
 # =========================================================================
 # =========================================================================
 
-echo "Installing libwebkit"
-echo ""
-
-apt-get -y update
-apt-get -y install libwebkitgtk-1.0-0 
-
 echo ""
 echo -n "Copying files to /userbin... "
 cp /usr/local/bin/*.run /userbin

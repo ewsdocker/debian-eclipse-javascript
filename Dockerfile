@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.1
+# @version 0.0.2
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the Academic Free License version 3.0
 # @package ewsdocker/debian-eclipse-javascript
@@ -26,7 +26,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-nodejs:0.0.1
+FROM ewsdocker/debian-nodejs:0.0.2
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -55,7 +55,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="0.0.1"
+ENV LMSBUILD_VERSION="0.0.2"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
