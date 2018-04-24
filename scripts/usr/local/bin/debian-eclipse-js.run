@@ -31,7 +31,7 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/eclipse/js:/root \
+           -v ${HOME}/.config/docker/eclipse/js:/root \
            -v ${HOME}/docker:/workspace \
            -v ${HOME}/source:/source \
            --name=eclipse-js \
