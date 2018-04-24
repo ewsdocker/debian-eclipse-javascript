@@ -48,8 +48,8 @@ ENV ECLIPSE_IDE=javascript
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-oxygen-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
 
-ENV ECLIPSE_HOST=http://pkgnginx 
-#ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_VERS}"
+#ENV ECLIPSE_HOST=http://pkgnginx 
+ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/oxygen/${ECLIPSE_VERS}"
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}" 
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
