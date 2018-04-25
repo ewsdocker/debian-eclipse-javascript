@@ -26,7 +26,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-nodejs:0.0.2
+FROM ewsdocker/debian-nodejs:0.0.1
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -78,15 +78,13 @@ RUN mkdir -p /etc/BUILDS/ \
                libgtk-3-common \ 
                libgtk2.0-0 \
                libgtk2.0-common \
-               libwebkitgtk-3.0.0 \
+               libwebkitgtk-3.0 \ 
                openjdk-8-jre \
                openjdk-8-jre-headless \
  && apt-get clean all \
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
- && rm -f /etc/apt/apt.conf.d/01norecommends \
- && apt-get -y install libwebkitgtk-3.0 \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/local/bin/eclipse 
 
 # =========================================================================
