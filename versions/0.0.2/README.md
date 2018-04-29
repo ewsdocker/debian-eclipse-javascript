@@ -3,7 +3,7 @@
 __Eclipse for JavaScript, HTML, XML, CSS, GIT in a Debian Docker image.__  
 
 ____
-New Version: **0.0.3** (**edge**). _2018-04-27_.  
+New Version: **0.0.1** (**edge**). _2018-04-24_.  
 Stable Version: **0.0.1**
 _____________________
 
@@ -16,31 +16,11 @@ Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub
 An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-eclipse-javascript/wiki/DockerTags) is available on the [ewsdocker/debian-eclipse-javascript Wiki](https://github.com/ewsdocker/debian-eclipse-javascript/wiki).
 ____
 
-#### Overview  
+### Overview  
 
 __ewsdocker/debian-eclipse-javascript__ is built upon __ewsdocker/debian-nodejs__ and provides the current _Eclipse JavaScript_ version in a Docker image.  
-____  
-#### Wiki  
+
+### Wiki  
 
 For more information on __ewsdocker/debian-eclipse-javascript__, visit the [__ewsdocker/debian-eclipse-javascript Wiki__](https://github.com/ewsdocker/debian-eclipse-javascript/wiki).  
 
-____  
-**Copyright © 2018. EarthWalk Software.**  
-**Licensed under the GNU General Public License, GPL-3.0-or-later.**  
-
-This file is part of **ewsdocker/debian-eclipse-javascript**.  
-
-**ewsdocker/debian-eclipse-javascript** is free software: you can redistribute 
-it and/or modify it under the terms of the GNU General Public License 
-as published by the Free Software Foundation, either version 3 of the 
-License, or (at your option) any later version.  
-
-**ewsdocker/debian-eclipse-javascript** is distributed in the hope that 
-it will be useful, but WITHOUT ANY WARRANTY; without even the implied 
-warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.  
-
-You should have received a copy of the GNU General Public License
-along with **ewsdocker/debian-eclipse-javascript**.  If not, see 
-<http://www.gnu.org/licenses/>.  
-____  
