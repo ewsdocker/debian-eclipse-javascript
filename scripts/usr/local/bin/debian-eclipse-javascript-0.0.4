@@ -1,19 +1,18 @@
 #!/bin/bash
-
 # =========================================================================
 # =========================================================================
 #
-#	version
-#	  Print version information
+#	debian-eclipse-javascript
+#	  Sample run script for ewsdocker/debian-eclipse-javascript
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.2
+# @version 0.0.4
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
-# @subpackage version
+# @subpackage debian-eclipse-javascript
 #
 # =========================================================================
 #
@@ -39,14 +38,13 @@
 # =========================================================================
 # =========================================================================
 
-lines=()
-mapfile -t lines < /etc/ewsdocker-builds.txt
-
-echo
-
-for line in "${lines[@]}"
-do
-  echo ${line}
-done
-
-echo
+docker run -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v /etc/localtime:/etc/localtime:ro \
+           -v ${HOME}/.config/docker/eclipse/js:/root \
+           -v /media/dev-2018/git/ewsdocker:/project \
+           -v /media/dev-2018:/source \
+           -v /media/dev-2018/workspace:/workspace \
+           --name=debian-eclipse-javascript-0.0.4 \
+       ewsdocker/debian-eclipse-javascript:0.0.4
