@@ -3,8 +3,9 @@
 __Eclipse for JavaScript, HTML, XML, CSS, GIT in a Debian Docker image.__  
 
 ____
-New Version: **0.0.3** (**edge**). _2018-04-27_.  
-Stable Version: **0.0.1**
+New Version: **0.0.5** (**edge**). _2018-07_14.  
+Latest version: **0.0.5 (**latest**).
+Stable Version: **0.0.5**
 _____________________
 
 **docker pull** will pull the **latest** image by default.  The Docker **latest** tag is based on the GitHub **master** source, which is the development version, and quite possibly **unstable**.  
