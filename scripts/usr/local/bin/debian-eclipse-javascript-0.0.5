@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.4
+# @version 0.0.5
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -43,8 +43,8 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/.config/docker/eclipse/js:/root \
-           -v /media/dev-2018/git/ewsdocker:/project \
+           -v /media/dev-2018/git/ewsdocker:/library \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace-js:/workspace \
-           --name=debian-eclipse-javascript-0.0.4 \
-       ewsdocker/debian-eclipse-javascript:0.0.4
+           --name=debian-eclipse-javascript-0.0.5 \
+       ewsdocker/debian-eclipse-javascript:0.0.5
