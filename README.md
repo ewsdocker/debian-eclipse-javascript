@@ -3,7 +3,7 @@
 __Eclipse for JavaScript, HTML, XML, CSS, GIT in a Debian Docker image.__  
 
 ____
-New Version: **0.0.5** (**edge**). _2018-07_14.  
+New Version: **0.0.5** (**edge**). <i>2018-07-14</i>.  
 Latest version: **0.0.5** (**latest**).  
 Stable Version: **0.0.5**
 _____________________
