@@ -66,7 +66,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.5"
+ENV LMSBUILD_VERSION="photon-9.5.5"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
