@@ -2,13 +2,14 @@
 # =========================================================================
 #
 #	Dockerfile for
-#	    eclipse-javascript-oxygen-3a + git/html/xml/css/mylyn + ...
-#		in a Debian docker container.
+#	    Eclipse Oxygen IDE for JavaScript + 
+#         git/html/xml/css/mylyn + ...
+#		  in a Debian docker container.
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5
+# @version 9.5.6
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -66,7 +67,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="photon-9.5.5"
+ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.6"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
@@ -93,7 +94,7 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-javascript-${LMSBUILD_VERSION}.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop 
 
 # =========================================================================
 
