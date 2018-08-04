@@ -106,8 +106,9 @@ ____
 
 For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
 
+____  
+
 **ewsdocker/debian-eclipse-javascript:photon-edge**  
-<ul>
 
 **photon-edge** is the development tag for the **9.5.1** release tag.
 
@@ -130,10 +131,9 @@ To create and run the container, run **Eclipse PDT photon-9.5.1** from the _Prog
 
     ~/.local/bin/debian-eclipse-javascript:photon-9.5.1  
 
-</ul>  
+____  
 
 **ewsdocker/debian-eclipse-javascript:oxygen-edge**  
-<ul>
 
 **oxygen-edge** is the development tag for the **9.5.1** release tag.
 
@@ -155,8 +155,6 @@ optional step:
 To create and run the container, run **Eclipse PDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
     ~/.local/bin/debian-eclipse-javascript:oxygen-9.5.1  
-
-</ul>  
 
 ____  
 
