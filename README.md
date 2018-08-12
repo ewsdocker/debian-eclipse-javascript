@@ -23,29 +23,29 @@ The following scripts will download the the selected **ewsdocker/debian-eclipse-
 
 The _default_ values will install all directories and contents in the **docker host** user's home directory (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-javascript/wiki/QuickStart#mapping)),  
 
-**ewsdocker/debian-eclipse-javascript:photon-9.5.0**  
+**ewsdocker/debian-eclipse-javascript:photon-9.5.6**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.0:/root \
-               --name=debian-eclipse-javascript-photon-9.5.0 \
-           ewsdocker/debian-eclipse-javascript:photon-9.5.0 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.6:/root \
+               --name=debian-eclipse-javascript-photon-9.5.6 \
+           ewsdocker/debian-eclipse-javascript:photon-9.5.6 lms-setup  
 
 ____  
   
-**ewsdocker/debian-eclipse-javascript:oxygen-9.5.0**  
+**ewsdocker/debian-eclipse-javascript:oxygen-9.5.6**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.0:/root \
-               --name=debian-eclipse-javascript-oxygen-9.5.0 \
-           ewsdocker/debian-eclipse-javascript:oxygen-9.5.0 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.6:/root \
+               --name=debian-eclipse-javascript-oxygen-9.5.6 \
+           ewsdocker/debian-eclipse-javascript:oxygen-9.5.6 lms-setup  
 
 ____  
 
@@ -65,7 +65,7 @@ ____
 
 **Executable scripts**  
 
-**ewsdocker/debian-eclipse-javascript:photon-9.5.0**
+**ewsdocker/debian-eclipse-javascript:photon-9.5.6**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -74,11 +74,11 @@ ____
                -v ${HOME}/source:/source \
                -v ${HOME}/workspace:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.0:/root \
-               --name=debian-eclipse-javascript-photon-9.5.0 \
-          ewsdocker/debian-eclipse-javascript:photon-9.5.0  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.6:/root \
+               --name=debian-eclipse-javascript-photon-9.5.6 \
+          ewsdocker/debian-eclipse-javascript:photon-9.5.6  
 
-**ewsdocker/debian-eclipse-javascript:oxygen-9.5.0**
+**ewsdocker/debian-eclipse-javascript:oxygen-9.5.6**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -87,9 +87,9 @@ ____
                -v ${HOME}/source:/source \
                -v ${HOME}/workspace:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.0:/root \
-               --name=debian-eclipse-javascript-oxygen-9.5.0 \
-           ewsdocker/debian-eclipse-javascript:oxygen-9.5.0  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.6:/root \
+               --name=debian-eclipse-javascript-oxygen-9.5.6 \
+           ewsdocker/debian-eclipse-javascript:oxygen-9.5.6  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-javascript/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
@@ -105,52 +105,52 @@ ____
 **ewsdocker/debian-eclipse-javascript:photon-edge**  
 
 
-**photon-edge** is the development tag for the **9.5.1** release tag.
+**photon-edge** is the development tag for the **9.5.7** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:photon-edge
-    docker tag ewsdocker/debian-eclipse-javascript:photon-edge ewsdocker/debian-eclipse-javascript:photon-9.5.1
+    docker tag ewsdocker/debian-eclipse-javascript:photon-edge ewsdocker/debian-eclipse-javascript:photon-9.5.7
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.1:/root \
-               --name=debian-eclipse-javascript-photon-9.5.1 \
-           ewsdocker/debian-eclipse-javascript:photon-9.5.1 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.7:/root \
+               --name=debian-eclipse-javascript-photon-9.5.7 \
+           ewsdocker/debian-eclipse-javascript:photon-9.5.7 lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-javascript:photon-edge  
 
-To create and run the container, run **Eclipse PDT photon-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse PDT photon-9.5.7** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-javascript:photon-9.5.1  
+    ~/.local/bin/debian-eclipse-javascript:photon-9.5.7  
 
 ____  
 
 **ewsdocker/debian-eclipse-javascript:oxygen-edge**  
 
 
-**oxygen-edge** is the development tag for the **9.5.1** release tag.
+**oxygen-edge** is the development tag for the **9.5.7** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:oxygen-edge
-    docker tag ewsdocker/debian-eclipse-javascript:oxygen-edge ewsdocker/debian-eclipse-javascript:oxygen-9.5.1
+    docker tag ewsdocker/debian-eclipse-javascript:oxygen-edge ewsdocker/debian-eclipse-javascript:oxygen-9.5.7
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.1:/root \
-               --name=debian-eclipse-javascript-oxygen-9.5.1 \
-           ewsdocker/debian-eclipse-javascript:oxygen-9.5.1 lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-oxygen-9.5.7:/root \
+               --name=debian-eclipse-javascript-oxygen-9.5.7 \
+           ewsdocker/debian-eclipse-javascript:oxygen-9.5.7 lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-javascript:oxygen-edge  
 
-To create and run the container, run **Eclipse PDT oxygen-9.5.1** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse PDT oxygen-9.5.7** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-javascript:oxygen-9.5.1  
+    ~/.local/bin/debian-eclipse-javascript:oxygen-9.5.7  
 
 ____  
 
