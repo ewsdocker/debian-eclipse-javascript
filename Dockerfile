@@ -2,8 +2,7 @@
 # =========================================================================
 #
 #	Dockerfile for
-#	    Eclipse Oxygen IDE for JavaScript + 
-#         git/html/xml/css/mylyn + ...
+#	    Eclipse Photon IDE for JavaScript + git/html/xml/css/mylyn + ...
 #		  in a Debian docker container.
 #
 # =========================================================================
@@ -38,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.2
+FROM ewsdocker/debian-openjre:9.5.3
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
