@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.2
+FROM ewsdocker/debian-openjre:9.5.3
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
