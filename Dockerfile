@@ -84,6 +84,7 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - \
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
+ && rm ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt 
 
