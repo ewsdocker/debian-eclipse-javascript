@@ -94,7 +94,7 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-${LMSBUILD_VERSION}-${ECLIPSE_IDE}.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop 
 
 # =========================================================================
 
