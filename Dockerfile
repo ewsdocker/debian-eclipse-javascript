@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.3
+FROM ewsdocker/debian-openjre:10-jre-9.5.4
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -66,7 +66,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="oxygen-9.5.6"
+ENV LMSBUILD_VERSION="9.5.6-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
