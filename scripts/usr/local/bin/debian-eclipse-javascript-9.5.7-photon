@@ -45,6 +45,6 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /media/dev-2018/git/ewsdocker:/library \
            -v /media/dev-2018:/source \
            -v /media/dev-2018/workspace-js:/workspace \
-            -v ${HOME}/.config/docker/debian-eclipse-javascript-photon-9.5.6:/root \
-           --name=debian-eclipse-javascript-photon-9.5.6 \
-       ewsdocker/debian-eclipse-javascript:photon-9.5.6
+            -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.7-photon:/root \
+           --name=debian-eclipse-javascript-9.5.7-photon \
+       ewsdocker/debian-eclipse-javascript:9.5.7-photon

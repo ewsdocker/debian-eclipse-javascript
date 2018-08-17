@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.6
+# @version 9.5.7-photon
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.3
+FROM ewsdocker/debian-openjre:10-jre-9.5.4
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -66,7 +66,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="${ECLIPSE_RELEASE}-9.5.6"
+ENV LMSBUILD_VERSION="9.5.7-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
@@ -80,21 +80,21 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - \
                build-essential \
                libwebkitgtk-3.0 \ 
                nodejs \
- && apt-get clean all \
  && cd /usr/local/share \
  && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt 
-
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \
+ && apt-get clean all 
+ 
 # =========================================================================
 
 COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-eclipse-${ECLIPSE_IDE}-${LMSBUILD_VERSION}.desktop 
+ && chmod 600 /usr/local/share/applications/debian-eclipse-${LMSBUILD_VERSION}-${ECLIPSE_IDE}.desktop 
 
 # =========================================================================
 
