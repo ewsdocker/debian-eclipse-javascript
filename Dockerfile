@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.7-photon
+# @version 9.5.8-photon
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:10-jre-9.5.4
+FROM ewsdocker/debian-openjre:10-jre-9.5.5
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -66,7 +66,7 @@ ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}"
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.7-${ECLIPSE_RELEASE}"
+ENV LMSBUILD_VERSION="9.5.8-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
@@ -78,6 +78,9 @@ RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - \
  && apt-get -y upgrade \
  && apt-get -y install \
                build-essential \
+               libgtk-3-0 \
+               libgtk-3-bin \
+               libgtk-3-common \ 
                libwebkitgtk-3.0 \ 
                nodejs \
  && cd /usr/local/share \
