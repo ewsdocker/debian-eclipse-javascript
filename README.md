@@ -105,11 +105,13 @@ ____
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/source:/source \
-               -v ${HOME}/workspace:/workspace \
+               -v /media/dev-2018/workspace/eclipse/javascript/photon/9.5.9:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
                -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-photon:/root \
                --name=debian-eclipse-javascript-9.5.9-photon \
           ewsdocker/debian-eclipse-javascript:9.5.9-photon  
+
+____  
 
 **ewsdocker/debian-eclipse-javascript:9.5.9-oxygen**
   
@@ -118,7 +120,7 @@ ____
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/source:/source \
-               -v ${HOME}/workspace:/workspace \
+               -v /media/dev-2018/workspace/eclipse/javascript/oxygen/9.5.9:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
                -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-oxygen:/root \
                --name=debian-eclipse-javascript-9.5.9-oxygen \

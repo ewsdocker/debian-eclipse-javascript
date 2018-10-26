@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/git/ewsdocker:/project \
+           -v ${HOME}/source:/source \
            -v /media/dev-2018/workspace/eclipse/javascript/photon/9.5.9:/workspace \
+           -v ${HOME}/git/ewsdocker:/project \
            -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-photon:/root \
            --name=debian-eclipse-javascript-9.5.9-photon \
        ewsdocker/debian-eclipse-javascript:9.5.9-photon
