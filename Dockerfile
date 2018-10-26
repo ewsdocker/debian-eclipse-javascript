@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.8-oxygen
+# @version 9.5.9-oxygen
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -37,7 +37,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:10-jre-9.5.5
+FROM ewsdocker/debian-openjre:9.5.8-gtk3
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
@@ -59,28 +59,36 @@ ENV ECLIPSE_IDE=javascript
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
 
-#ENV ECLIPSE_HOST=http://pkgnginx 
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
+ENV ECLIPSE_HOST=http://alpine-nginx-pkgcache 
+#ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
 
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}" 
 
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.8-${ECLIPSE_RELEASE}"
-ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
-ENV LMSBUILD_DOCKER="ewsdocker/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
+ENV NODEJS_VERSION="setup_10.x"
+ENV NODEJS_HOST="https://deb.nodesource.com"
+ENV NODEJS_URL="${NODEJS_HOST}/${NODEJS_VERSION}"
 
 # =========================================================================
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash - \
+ENV LMSBUILD_RELVER="9.5.9"
+ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
+ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
+ENV LMSBUILD_REPO=ewsdocker 
+ENV LMSBUILD_REGISTRY="" 
+
+ENV LMSBUILD_PARENT="debian-openjre:9.5.8-gtk3"
+ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NodeJs ${NODEJS_VERSION}, eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
+
+# =========================================================================
+
+RUN curl -sL https://deb.nodesource.com/${NODEJS_VERSION} | sudo -E bash - \
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
                build-essential \
-               libgtk-3-0 \
-               libgtk-3-bin \
-               libgtk-3-common \ 
                libwebkitgtk-3.0 \ 
                nodejs \
  && apt-get clean all \
