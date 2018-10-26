@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.8-photon
+# @version 9.5.9-photon
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
@@ -42,9 +42,9 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v /media/dev-2018/git/ewsdocker:/library \
            -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace-js:/workspace \
-            -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.8-photon:/root \
-           --name=debian-eclipse-javascript-9.5.8-photon \
-       ewsdocker/debian-eclipse-javascript:9.5.8-photon
+           -v /media/dev-2018/git/ewsdocker:/project \
+           -v /media/dev-2018/workspace/eclipse/javascript/photon/9.5.9:/workspace \
+           -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-photon:/root \
+           --name=debian-eclipse-javascript-9.5.9-photon \
+       ewsdocker/debian-eclipse-javascript:9.5.9-photon
