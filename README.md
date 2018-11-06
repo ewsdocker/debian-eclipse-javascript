@@ -143,23 +143,24 @@ ____
 **edge-photon** is the development tag for the **9.5.10** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:edge-photon
-    docker tag ewsdocker/debian-eclipse-javascript:edge-photon ewsdocker/debian-eclipse-javascript:9.5.10-photon
+    docker tag ewsdocker/debian-eclipse-javascript:edge-photon ewsdocker/debian-eclipse-javascript:9.5.10
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
+               -e LMSBUILD_VERSION="9.5.10" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-photon:/root \
-               --name=debian-eclipse-javascript-9.5.10-photon \
-           ewsdocker/debian-eclipse-javascript:9.5.10-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10:/root \
+               --name=debian-eclipse-javascript-9.5.10 \
+           ewsdocker/debian-eclipse-javascript:9.5.10 lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-javascript:edge-photon  
 
-To create and run the container, run **Eclipse PDT 9.5.10-photon** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse Photon JavaScript (9.5.10)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-javascript:9.5.10-photon  
+    ~/.local/bin/debian-eclipse-javascript-9.5.10  
 
 ____  
 
