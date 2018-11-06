@@ -1,4 +1,4 @@
-## ewsdocker/debian-eclipse-javascript:9.5.9  
+## ewsdocker/debian-eclipse-javascript:9.5.10  
 
 **Eclipse IDE for JavaScript in a Debian-based Docker image.**  
 
@@ -39,29 +39,29 @@ ____
 
 ____  
   
-**ewsdocker/debian-eclipse-javascript:9.5.9-photon**  
+**ewsdocker/debian-eclipse-javascript:9.5.10-photon**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-photon:/root \
-               --name=debian-eclipse-javascript-9.5.9-photon \
-           ewsdocker/debian-eclipse-javascript:9.5.9-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-photon:/root \
+               --name=debian-eclipse-javascript-9.5.10-photon \
+           ewsdocker/debian-eclipse-javascript:9.5.10-photon lms-setup  
 
 ____  
   
-**ewsdocker/debian-eclipse-javascript:9.5.9-oxygen**  
+**ewsdocker/debian-eclipse-javascript:9.5.10-oxygen**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-oxygen:/root \
-               --name=debian-eclipse-javascript-9.5.9-oxygen \
-           ewsdocker/debian-eclipse-javascript:9.5.9-oxygen lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-oxygen:/root \
+               --name=debian-eclipse-javascript-9.5.10-oxygen \
+           ewsdocker/debian-eclipse-javascript:9.5.10-oxygen lms-setup  
 
 ____  
 
@@ -74,7 +74,8 @@ ____
 After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
 
 + the executable scripts have been copied to **~/bin**;  
-+ the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
++ the application desktop file(s) have been copied to **~/.local/share/applications**; 
++ application desktops can be launched from any _task bar_ menu;  
 + the associated **debian-eclipse-javascript-"version"-"branch"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
 
 ____  
@@ -98,33 +99,33 @@ ____
 
 ____  
 
-**ewsdocker/debian-eclipse-javascript:9.5.9-photon**
+**ewsdocker/debian-eclipse-javascript:9.5.10-photon**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/source:/source \
-               -v /media/dev-2018/workspace/eclipse/javascript/photon/9.5.9:/workspace \
+               -v /media/dev-2018/workspace/eclipse/javascript/photon/9.5.10:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-photon:/root \
-               --name=debian-eclipse-javascript-9.5.9-photon \
-          ewsdocker/debian-eclipse-javascript:9.5.9-photon  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-photon:/root \
+               --name=debian-eclipse-javascript-9.5.10-photon \
+          ewsdocker/debian-eclipse-javascript:9.5.10-photon  
 
 ____  
 
-**ewsdocker/debian-eclipse-javascript:9.5.9-oxygen**
+**ewsdocker/debian-eclipse-javascript:9.5.10-oxygen**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/source:/source \
-               -v /media/dev-2018/workspace/eclipse/javascript/oxygen/9.5.9:/workspace \
+               -v /media/dev-2018/workspace/eclipse/javascript/oxygen/9.5.10:/workspace \
                -v ${HOME}/git/ewsdocker:/project \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.9-oxygen:/root \
-               --name=debian-eclipse-javascript-9.5.9-oxygen \
-           ewsdocker/debian-eclipse-javascript:9.5.9-oxygen  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-oxygen:/root \
+               --name=debian-eclipse-javascript-9.5.10-oxygen \
+           ewsdocker/debian-eclipse-javascript:9.5.10-oxygen  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-eclipse-javascript/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
@@ -140,52 +141,52 @@ ____
 **ewsdocker/debian-eclipse-javascript:edge**  
 
 
-**edge** is the development tag for the **9.5.10** release tag.
+**edge** is the development tag for the **9.5.11** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:edge
-    docker tag ewsdocker/debian-eclipse-javascript:edge ewsdocker/debian-eclipse-javascript:9.5.10
+    docker tag ewsdocker/debian-eclipse-javascript:edge ewsdocker/debian-eclipse-javascript:9.5.11
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-photon:/root \
-               --name=debian-eclipse-javascript-9.5.10-photon \
-           ewsdocker/debian-eclipse-javascript:9.5.10-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.11-photon:/root \
+               --name=debian-eclipse-javascript-9.5.11-photon \
+           ewsdocker/debian-eclipse-javascript:9.5.11-photon lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-javascript:edge  
 
-To create and run the container, run **Eclipse Photon JavaScript (9.5.10)** from the _Programming_ category of any desktop menu. From the command-line, the following should work:
+To create and run the container, run **Eclipse Photon JavaScript (9.5.11)** from the _Programming_ category of any desktop menu. From the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-javascript-9.5.10  
+    ~/.local/bin/debian-eclipse-javascript-9.5.11  
 
 ____  
 
 **ewsdocker/debian-eclipse-javascript:edge-oxygen**  
 
 
-**edge-oxygen** is the development tag for the **9.5.10-oxygen** release tag.
+**edge-oxygen** is the development tag for the **9.5.11-oxygen** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:edge-oxygen
-    docker tag ewsdocker/debian-eclipse-javascript:edge-oxygen ewsdocker/debian-eclipse-javascript:9.5.10-oxygen
+    docker tag ewsdocker/debian-eclipse-javascript:edge-oxygen ewsdocker/debian-eclipse-javascript:9.5.11-oxygen
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-oxygen:/root \
-               --name=debian-eclipse-javascript-9.5.10-oxygen \
-           ewsdocker/debian-eclipse-javascript:9.5.10-oxygen lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.11-oxygen:/root \
+               --name=debian-eclipse-javascript-9.5.11-oxygen \
+           ewsdocker/debian-eclipse-javascript:9.5.11-oxygen lms-setup  
 
 optional step:
 
     docker rmi ewsdocker/debian-eclipse-javascript:edge-oxygen  
 
-To create and run the container, run **Eclipse PDT 9.5.10-oxygen** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
+To create and run the container, run **Eclipse PDT 9.5.11-oxygen** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
-    ~/.local/bin/debian-eclipse-javascript:9.5.10-oxygen  
+    ~/.local/bin/debian-eclipse-javascript:9.5.11-oxygen  
 
 ____  
 
