@@ -131,19 +131,19 @@ Refer to [Mapping docker host resources to the docker container](https://github.
 
 ____  
 
-**Regarding edge-photon and edge-oxygen**  
+**Regarding edge and edge-oxygen**  
 
 For the very brave, if an _edge_ tag is available, these instructions will download, rename and install the _edge_ version.  Good luck.  
 
 ____  
 
-**ewsdocker/debian-eclipse-javascript:edge-photon**  
+**ewsdocker/debian-eclipse-javascript:edge**  
 
 
-**edge-photon** is the development tag for the **9.5.10** release tag.
+**edge** is the development tag for the **9.5.10** release tag.
 
-    docker pull ewsdocker/debian-eclipse-javascript:edge-photon
-    docker tag ewsdocker/debian-eclipse-javascript:edge-photon ewsdocker/debian-eclipse-javascript:9.5.10
+    docker pull ewsdocker/debian-eclipse-javascript:edge
+    docker tag ewsdocker/debian-eclipse-javascript:edge ewsdocker/debian-eclipse-javascript:9.5.10
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
@@ -156,7 +156,7 @@ ____
 
 optional step:
 
-    docker rmi ewsdocker/debian-eclipse-javascript:edge-photon  
+    docker rmi ewsdocker/debian-eclipse-javascript:edge  
 
 To create and run the container, run **Eclipse Photon JavaScript (9.5.10)** from the _Programming_ category of any desktop menu, or from the command-line, the following should work:
 
@@ -167,7 +167,7 @@ ____
 **ewsdocker/debian-eclipse-javascript:edge-oxygen**  
 
 
-**edge-oxygen** is the development tag for the **9.5.10** release tag.
+**edge-oxygen** is the development tag for the **9.5.10-oxygen** release tag.
 
     docker pull ewsdocker/debian-eclipse-javascript:edge-oxygen
     docker tag ewsdocker/debian-eclipse-javascript:edge-oxygen ewsdocker/debian-eclipse-javascript:9.5.10-oxygen
