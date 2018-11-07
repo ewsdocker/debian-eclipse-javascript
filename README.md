@@ -46,9 +46,9 @@ ____
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10-photon:/root \
-               --name=debian-eclipse-javascript-9.5.10-photon \
-           ewsdocker/debian-eclipse-javascript:9.5.10-photon lms-setup  
+               -v ${HOME}/.config/docker/debian-eclipse-javascript-9.5.10:/root \
+               --name=debian-eclipse-javascript-9.5.10 \
+           ewsdocker/debian-eclipse-javascript:9.5.10 lms-setup  
 
 ____  
   
