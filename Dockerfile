@@ -8,15 +8,15 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.10-photon
-# @copyright © 2018. EarthWalk Software.
+# @version 9.6.0
+# @copyright © 2018, 2019. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-eclipse-javascript
 # @subpackage Dockerfile
 #
 # =========================================================================
 #
-#	Copyright © 2018. EarthWalk Software
+#	Copyright © 2018, 2019. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
 #   This file is part of ewsdocker/debian-eclipse-javascript.
@@ -37,11 +37,20 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-openjre:9.5.9-gtk3
+FROM ewsdocker/debian-openjre:9.6.0-gtk3
 
 MAINTAINER Jay Wheeler <EarthWalkSoftware@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
+
+# =========================================================================
+#
+#   ARG_SOURCE <== url of the local source (http://alpine-nginx-pkgcache), 
+#                   otherwise external source if not set.
+#
+# =========================================================================
+
+ARG ARG_SOURCE
 
 # =========================================================================
 #
@@ -59,9 +68,7 @@ ENV ECLIPSE_IDE=javascript
 ENV ECLIPSE_PKG="eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}-linux-gtk-x86_64.tar.gz" 
 ENV ECLIPSE_DIR=eclipse 
 
-#ENV ECLIPSE_HOST=http://alpine-nginx-pkgcache 
-ENV ECLIPSE_HOST="http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"
-
+ENV ECLIPSE_HOST=${ARG_SOURCE:-"http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/${ECLIPSE_RELEASE}/${ECLIPSE_VERS}"}
 ENV ECLIPSE_URL="${ECLIPSE_HOST}/${ECLIPSE_PKG}" 
 
 # =========================================================================
@@ -72,27 +79,27 @@ ENV NODEJS_URL="${NODEJS_HOST}/${NODEJS_VERSION}"
 
 # =========================================================================
 
-ENV LMSBUILD_RELVER="9.5.10"
+ENV LMSBUILD_RELVER="9.6.0"
 ENV LMSBUILD_VERSION="${LMSBUILD_RELVER}-${ECLIPSE_RELEASE}"
 ENV LMSBUILD_NAME=debian-eclipse-${ECLIPSE_IDE} 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-openjre:9.5.9-gtk3"
+ENV LMSBUILD_PARENT="debian-openjre:9.6.0-gtk3"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NodeJs ${NODEJS_VERSION}, eclipse-${ECLIPSE_IDE}-${ECLIPSE_RELEASE}-${ECLIPSE_VERS}"
 
 # =========================================================================
 
-RUN curl -sL ${NODEJS_URL} | sudo -E bash - \
+RUN cd /usr/local/share \
+ && wget ${ECLIPSE_URL} \
+ && curl -sL ${NODEJS_URL} | sudo -E bash - \
  && apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
                build-essential \
                libwebkitgtk-3.0 \ 
                nodejs \
- && cd /usr/local/share \
- && wget -q ${ECLIPSE_URL} \
  && tar -xvf ${ECLIPSE_PKG} \
  && rm ${ECLIPSE_PKG} \
  && ln -s /usr/local/share/${ECLIPSE_DIR}/eclipse /usr/bin/eclipse \
